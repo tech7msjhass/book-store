@@ -16,7 +16,9 @@ const ShowBooks = () => {
   const showBookById = async () => {
     setLoading(true);
     try {
-      const response = await fetch(`http://localhost:5500/books/${id}`);
+      const response = await fetch(
+        `https://book-store-ah5k.onrender.com/books/${id}`
+      );
       if (!response.ok) {
         throw new Error(`Something went Wrong: ${response.statusText}`);
       }

@@ -20,7 +20,9 @@ const EditBooks = () => {
     const getUpdatedBooks = async () => {
       setLoading(true);
       try {
-        const response = await fetch(`http://localhost:5500/books/${id}`);
+        const response = await fetch(
+          `https://book-store-ah5k.onrender.com/books/${id}`
+        );
         if (!response.ok) {
           throw new Error(`Failed to Get Updated: ${response.statusText}`);
         }
@@ -47,13 +49,16 @@ const EditBooks = () => {
     };
     setLoading(true);
     try {
-      const response = await fetch(`http://localhost:5500/books/${id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        `https://book-store-ah5k.onrender.com/books/${id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
       if (!response.ok) {
         throw new Error(`Failed to get Updated: ${response.statusText}`);
       }

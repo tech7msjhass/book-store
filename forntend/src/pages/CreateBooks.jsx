@@ -23,13 +23,16 @@ const CreateBooks = () => {
     };
     setLoading(true);
     try {
-      const response = await fetch("http://localhost:5500/books", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        "https://book-store-ah5k.onrender.com/books",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
       if (!response.ok) {
         throw new Error(
           `Something went Wrong during POST request: ${response.statusText}`

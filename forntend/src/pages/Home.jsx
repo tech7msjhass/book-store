@@ -16,7 +16,7 @@ const Home = () => {
     setLoading(true);
     try {
       const response = await fetch(
-        `http://localhost:5500/books?name=${searchByName}`
+        `https://book-store-ah5k.onrender.com/books?name=${searchByName}`
       );
       if (!response.ok) {
         throw new Error(

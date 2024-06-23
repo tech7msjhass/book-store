@@ -16,9 +16,12 @@ const DeleteBooks = () => {
   const handleDelete = async () => {
     setLoading(true);
     try {
-      const response = await fetch(`http://localhost:5500/books/${id}`, {
-        method: "DELETE",
-      });
+      const response = await fetch(
+        `https://book-store-ah5k.onrender.com/books/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
       if (!response.ok) {
         throw new Error(`Book is Not Deleted: ${response.statusText}`);
       }
